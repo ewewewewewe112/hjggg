@@ -1,0 +1,24 @@
+  public GameObject player;
+    public float dist;
+    NavMeshAgent nav;
+    public float Radius = 1000;
+    // Start is called before the first frame update
+    void Start()
+    {
+        nav = GetComponent<NavMeshAgent>();
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (dist > Radius)
+        {
+            
+        }
+        if (dist < Radius)
+        {
+            nav.SetDestination(player.transform.position);
+        }
+        dist = Vector3.Distance(player.transform.position, transform.position);
+    }
